@@ -8,13 +8,17 @@ const BuildWhatever: React.FC = () => {
   const [buildWhatever, setBuildWhatever] = useState('');
   const [typedSelection, setTypedSelection] = useState('');
 
-  useEffect(() => {
+  const generateRandomBuild = () => {
     const randomApp = apps[Math.floor(Math.random() * apps.length)];
     const randomExecLayer = execLayers[Math.floor(Math.random() * execLayers.length)];
     const randomDaLayer = daLayers[Math.floor(Math.random() * daLayers.length)];
 
     const newSelection = `Build ${randomApp} with the ${randomExecLayer} on ${randomDaLayer}.`;
     setBuildWhatever(newSelection);
+  }
+
+  useEffect(() => {
+    generateRandomBuild();
   }, []);
 
   useEffect(() => {
@@ -27,8 +31,13 @@ const BuildWhatever: React.FC = () => {
         }
         if (i >= buildWhatever.length-1) {
           clearInterval(typing);
+
+          setTimeout(() => {
+            setTypedSelection('');
+            generateRandomBuild();
+          }, 2000); // Wait for 2 seconds before generating a new string
         }
-      }, 100);
+      }, 50);
 
       return () => clearInterval(typing);
     }
@@ -38,3 +47,4 @@ const BuildWhatever: React.FC = () => {
 };
 
 export default BuildWhatever;
+``
