@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const apps = ['a social media app', 'an NFT marketplace', 'your next game', 'a supply chain tracking system', 'a digital identity verification system', 'a peer-to-peer marketplace', 'a voting system', 'a healthcare records system'];
-const execLayers = ['the EVM', 'the SVM', 'the OP Stack', 'Move VM', "the ZKVM", "the zkEVM", "WASM"];
+const execLayers = ['the EVM', 'the SVM', 'the OP Stack', 'Move VM', "the ZKVM", "the zkEVM", "WASM", "Rollkit"];
 const daLayers = ['Celestia', 'Ethereum', 'Bitcoin', 'EigenLayer', 'Google Drive', 'whatever you want']; 
 
 const BuildWhatever: React.FC = () => {
@@ -13,7 +13,7 @@ const BuildWhatever: React.FC = () => {
     const randomExecLayer = execLayers[Math.floor(Math.random() * execLayers.length)];
     const randomDaLayer = daLayers[Math.floor(Math.random() * daLayers.length)];
 
-    const newSelection = `Build ${randomApp} with ${randomExecLayer} on ${randomDaLayer}.`;
+    const newSelection = `build ${randomApp} with ${randomExecLayer} on ${randomDaLayer}`;
     setBuildWhatever(newSelection);
   }
 
@@ -43,8 +43,7 @@ const BuildWhatever: React.FC = () => {
     }
   }, [buildWhatever]);
 
-  return <p>{typedSelection}</p>;
+  return <p className="fixed-height">{typedSelection}</p>;
 };
 
 export default BuildWhatever;
-``
