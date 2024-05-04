@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const apps = ['a social media app', 'an NFT marketplace', 'your next game', 'a supply chain tracking system', 'a digital identity verification system', 'a peer-to-peer marketplace', 'a voting system', 'a healthcare records system'];
-const execLayers = ['the EVM', 'the SVM', 'the OP Stack', 'Move VM', "the ZKVM", "the zkEVM", "WASM", "Rollkit"];
+const execLayers = ['the EVM', 'the SVM', 'the OP Stack', 'Move VM', "the ZKVM", "the zkEVM", "WASM", "Rollkit", "Soverign SDK", "Astria", "Arbitrum Nitro"];
 const daLayers = ['Celestia', 'Ethereum', 'Bitcoin', 'EigenLayer', 'Google Drive', 'whatever you want']; 
 
 const BuildWhatever: React.FC = () => {
